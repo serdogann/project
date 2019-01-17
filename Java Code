@@ -1,0 +1,46 @@
+import java.io.*; // all io classes are included.
+
+
+public class exp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String str; 
+		
+		try {
+			FileInputStream f = new FileInputStream("C:\\Users\\DELL\\Desktop\\newFile\\File.txt");
+			// "C:\Users\DELL\Desktop\newFile\File.txt" is my text file and its location. 
+			
+			DataInputStream d = new DataInputStream(f);
+			BufferedReader b = new BufferedReader(new InputStreamReader(d));
+			
+			for(int i=0;i<14;i++) {
+				// i is number of accounts.
+			str = b.readLine();
+			System.out.println(str);
+			}
+			d.close();
+		}catch(Exception e) {
+			
+			System.err.println("Error : " + e.getMessage());
+		}
+	}
+
+}
+/*         Output:
+     
+          Accounts
+-------------------------------
+46 43156464 3431 4398 1256 1545
+78 45123698 1258 1239 5498 1262
+85 12569874 2569 3485 3674 1659 
+58 21565485 5964 1295 3265 4785
+21 84598845 1258 4569 6329 3485
+65 32564987 5498 6521 8732 5498 
+41 32167945 3659 4786 1265 4567 
+55 54845456 6584 6531 8651 6456
+56 12659874 1359 1269 3567 1369
+59 36547895 1365 9874 1365 7893
+36 13657896 1365 7863 4563 4585
+36 12654569 3654 1265 4598 4623  */
